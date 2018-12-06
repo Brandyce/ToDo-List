@@ -1,19 +1,23 @@
 const btn = document.forms.todoForm.btn;
-const todoList = [document.querySelector('#todoList'), ];
-const todolist = document.createElement('ul');
-document.body.appendChild(todoList);
+const todoList = [];
+
 
 btn.addEventListener('click', e => {
  e.preventDefault();
- let entry = document.forms.todoForm.entry;
- let item = entry.value;
- todoList.push(item);
- console.log(todoList);
-});
+ const list = document.createElement('li');
 
-todoList.forEach(todoItem => {
+ const entry = document.forms.todoForm.entry;
+ const item = entry.value;
+ todoList.push(item);
+ const toDoList = document.createTextNode(item);
+ list.appendChild(toDoList);
+
+todoList.push();
+
  const todoItem = document.createElement('li');
  todoItem.textContent = item;
- document.body.list.append();
+ document.body.append(list);
  console.log(todoItem);
 });
+
+
