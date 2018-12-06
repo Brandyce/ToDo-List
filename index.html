@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My ToDo List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <h1 class="text-center title">My ToDo List</h1>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-5 col-lg-offset-1">
+        <h1>ToDo</h1>
+        <form action="" name="todoForm">
+          <label for="todo-list"></label>
+          <input id="todo-input" type="text" name="entry">
+          <button type="submit" name="btn" class="btn-dark">Enter</button>
+        </form>
+        <ul id="todoList">
+          
+        </ul>
+      </div>
+      <div class="col-lg-5 col-lg-offset-1">
+          <h1>Done</h1>
+          <ul id="doneList">
+    
+          </ul>
+        </div>
+    </div>
+  </div>
+  
+  <!-- Javascript -->
+  <script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
