@@ -9,23 +9,23 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  
   <h1 class="text-center title">My ToDo List</h1>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-5 col-lg-offset-2">
+        
         <h1 class="text-center">ToDo</h1>
 
-        <form action="" name="todoForm" class="text-center">
-          <label for="todo-list"></label>
-          <input id="todo-input" type="text" name="entry">
-          <button type="submit" name="btn" class="btn-dark">Enter</button>
+        <form id="todoForm" class="text-center">
+          <input id="todoInput">
+          <button type="button" onclick="todoList()" id="enterBtn" class="btn-dark">Enter</button>
         </form>
 
-        <ul id="todoList">
-          <i class="fas fa-check-square"></i>
-        </ul>
-
+        <ol id="todoList">
+          <!-- <i class="fas fa-check-square"></i> -->
+        </ol>
       </div>
       <div class="col-lg-5 col-lg-offset-2">
           <h1 class="text-center">Done</h1>
@@ -33,7 +33,7 @@
           <ul id="doneList">
     
           </ul>
-          
+
         </div>
     </div>
   </div>

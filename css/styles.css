@@ -8,6 +8,13 @@ h1 {
 .title {
     background-color: lightblue;
 };
-ul {
-    font-family: cursive;
-};
+#done-btn {
+    float: right;
+}
+/* #todoItem {
+    width: 100%;
+    height: 150px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow:0px 1px 2px rgba(44, 62, 80, 0.10));
+} */

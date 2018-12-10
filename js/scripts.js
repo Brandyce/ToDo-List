@@ -1,67 +1,93 @@
-const btn = document.forms.todoForm.btn;
-//list arrays
-const todoList = [];
-const doneList = [];
+const todo = [];
+const done = [];
+
+function deleteTask() {
+     const item = this.parentNode.parentNode;
+     const parent = item.parentNode;
+     parent.removeChild(item);
+};
+
+function doneTask() {
+     
+}
 
 
-btn.addEventListener('click', e => {
- e.preventDefault();
- //makes list
- const list = document.createElement('ul');
-//connects input to variable
- const entry = document.forms.todoForm.entry;
- //turns variable to a value you can use
- const item = entry.value;
- //pushes input into the todoList array and into text
- todoList.push(item);
- const toDoList = document.createTextNode(item);
- list.appendChild(toDoList);
-//makes list item and puts text in list item
- const todoItem = document.createElement('li');
- todoItem.textContent = item;
- document.body.append(list);
- console.log(todoItem);
- console.log(todoList);
-});
+function todoList() {
+     const item = document.getElementById('todoInput').value;
+     const text = document.createTextNode(item);
+     const deleteBtn = document.createElement("button");
+     const checkBox = document.createElement("input");
+     const editButton = document.createElement("button");
+     const editInput = document.createElement("input");
+     
+     //types
+     checkBox.type="checkbox";
+     editInput.type="text";
 
-// //make arrays and button
-// const btn = document.forms.todoForm.btn;
-// const done = [];
-// const todo = [];
-// //button event listener(click)get rid of default reaction
-// btn.addEventListener('click', e => {
-//      e.preventDefault();
-//      //add item to array
-//     const entry = document.forms.todoForm.entry;
-//     const item = entry.value;
-//     console.log(item);
-//     todo.push(item);
-//     console.log(todo);
-// });
+     //innertext and classes
+     deleteBtn.textContent = "Delete";
+     deleteBtn.className = "delete";
+     deleteBtn.addEventListener("click", deleteTask);
+     editButton.innerText = "Edit";
+     editButton.className = "edit";
+     // editButton.addEventListener("click", editTask);
 
-// //end of event listener
-// function makeList(todo) {
-//     // Create the list element:
-//     const list = document.createElement('ul');
+     //styling
+     deleteBtn.style.float = "right";
+     checkBox.style.float = "left";
+     editButton.style.float = "right";
+     
+     //list item
+     todo.push(item);
+     console.log(todo);
+     const newItem = document.createElement('li');
+     console.log(newItem);
+     newItem.appendChild(text);
+     document.getElementById("todoList").appendChild(newItem);
 
-//     for (var i = 0; i < array.length; i++) {
-//         // Create the list item:
-//         var item = document.createElement('li');
+     //appending
+     newItem.appendChild(checkBox);
+     newItem.appendChild(deleteBtn);
+     newItem.appendChild(editButton);
+     newItem.appendChild(editInput);
+     // return newItem;
+};
 
-//         // Set its contents:
-//         item.appendChild(document.createTextNode(array[i]));
+// console.log(todoList);
 
-//         // Add it to the list:
-//         list.appendChild(item);
-//     }
 
-//     // Finally, return the constructed list:
-//     return list;
+
+// function editTask() {
+//      const newItem = this.parentNode;
+//      console.log(newItem);
+//      const editInput = listItem.querySelector('input[type=text]');
+//      const containsClass=listItem.classList.contains("editMade");
 // };
 
-// // Add the contents of options[0] to #foo:
-// document.getElementById('foo').appendChild(makeList(todo[0]));
-// //make foreach loop to make li and buttons for each array item
-// const firstList = document.getElementById("todoList");
-// const secondList = document.getElementById("doneList");
+
+//if(containsClass) {
+     //           label.innerText=editInput.value;
+     //      } else{
+     //           editInput.value=label.innerText;
+     //      }
+     // };
+
+
+//connecting the buttons to the functions
+ //delete button
+ 
+
+
+//    var bindTaskEvents = function(taskListItem) {
+//      //select taskListItem's children
+//      var deleteButton = document.querySelector("button.delete"); //Delete button
+//      //bind tasks to delete button
+//      deleteButton.onclick = deleteTask;
+//    };
+
+/* <form action="" name="todoForm" class="text-center">
+          <label for="todo-list"></label>
+          <input id="todo-input" type="text" name="entry">
+          <button type="submit" name="btn" class="btn-dark">Enter</button>
+        </form> */
 
