@@ -2,14 +2,21 @@ const todo = [];
 const done = [];
 
 function deleteTask() {
-     const item = this.parentNode.parentNode;
-     const parent = item.parentNode;
-     parent.removeChild(item);
+     const newItem = this.parentNode;
+     const parent = newItem.parentNode;
+     parent.removeChild(newItem);
 };
 
 function doneTask() {
-     
-}
+     const newItem = this.parentNode;
+     const strike = newItem.style.textDecoration = 'line-through';
+     setTimeout(strike, 3000);
+     const parent = newItem.parentNode;
+     const destination = document.getElementById('doneList');
+     parent.removeChild(newItem);
+     destination.appendChild(newItem);
+     done.push(newItem);
+};
 
 
 function todoList() {
@@ -28,6 +35,7 @@ function todoList() {
      deleteBtn.textContent = "Delete";
      deleteBtn.className = "delete";
      deleteBtn.addEventListener("click", deleteTask);
+     checkBox.addEventListener('click', doneTask);
      editButton.innerText = "Edit";
      editButton.className = "edit";
      // editButton.addEventListener("click", editTask);
@@ -51,43 +59,9 @@ function todoList() {
      newItem.appendChild(editButton);
      newItem.appendChild(editInput);
      // return newItem;
+
 };
 
-// console.log(todoList);
 
 
-
-// function editTask() {
-//      const newItem = this.parentNode;
-//      console.log(newItem);
-//      const editInput = listItem.querySelector('input[type=text]');
-//      const containsClass=listItem.classList.contains("editMade");
-// };
-
-
-//if(containsClass) {
-     //           label.innerText=editInput.value;
-     //      } else{
-     //           editInput.value=label.innerText;
-     //      }
-     // };
-
-
-//connecting the buttons to the functions
- //delete button
- 
-
-
-//    var bindTaskEvents = function(taskListItem) {
-//      //select taskListItem's children
-//      var deleteButton = document.querySelector("button.delete"); //Delete button
-//      //bind tasks to delete button
-//      deleteButton.onclick = deleteTask;
-//    };
-
-/* <form action="" name="todoForm" class="text-center">
-          <label for="todo-list"></label>
-          <input id="todo-input" type="text" name="entry">
-          <button type="submit" name="btn" class="btn-dark">Enter</button>
-        </form> */
 
