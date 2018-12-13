@@ -75,6 +75,7 @@ function todoList() {
      deleteBtn.className = "delete";
      deleteBtn.className = "btn-dark";
      deleteBtn.addEventListener("click", deleteTask);
+     checkBox.id = "checkbox";
      checkBox.addEventListener('click', doneTask);
      editButton.innerText = "Edit";
      editButton.className = "edit";
